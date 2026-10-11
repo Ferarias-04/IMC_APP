@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    tools:context=".MainActivity">
+
+    <!-- titulo -->
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/titulo"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- tarjeta male -->
+    <LinearLayout
+        android:id="@+id/cardMale"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/bg_tarjeta_sexo"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/cardFemale">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/male"
+            app:tint="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/male"
+            android:textColor="@color/texto_secundario"
+            android:textSize="16sp" />
+</LinearLayout>
+
+    <!-- tarjeta female -->
+    <LinearLayout
+        android:id="@+id/cardFemale"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_tarjeta_sexo"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp"
+        app:layout_constraintTop_toTopOf="@id/cardMale"
+        app:layout_constraintStart_toEndOf="@id/cardMale"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/female"
+            app:tint="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/female"
+            android:textColor="@color/texto_secundario"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- tarjeta altura -->
+    <LinearLayout
+        android:id="@+id/cardAltura"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_tarjeta"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/cardMale"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/sbAltura"
+            android:text="@string/height"
+            android:textColor="@color/texto_secundario"
+            android:textSize="16sp" />
+
+        <!-- numero inches horizontal -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvAltura"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:accessibilityLiveRegion="polite"
+                android:textColor="@android:color/white"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                tools:text="175" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/cm"
+                android:textColor="@color/texto_secundario"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/sbAltura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:max="100"
+            android:progress="55"
+            android:progressTint="@color/morado_claro"
+            android:progressBackgroundTint="@color/texto_secundario"
+            android:thumbTint="@color/morado_claro" />
+    </LinearLayout>
+
+    <!-- tarjeta peso -->
+    <LinearLayout
+        android:id="@+id/cardPeso"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/bg_tarjeta"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardAltura"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cardEdad">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weight"
+            android:textColor="@color/texto_secundario"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvPeso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:accessibilityLiveRegion="polite"
+            android:textColor="@android:color/white"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            tools:text="70" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnRestarPeso"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_circulo"
+                android:contentDescription="@string/cd_restar_peso"
+                android:src="@drawable/ic_remove"
+                app:tint="@android:color/white" />
+
+            <ImageButton
+                android:id="@+id/btnSumarPeso"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/bg_circulo"
+                android:contentDescription="@string/cd_sumar_peso"
+                android:src="@drawable/ic_add"
+                app:tint="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- tarjeta edad -->
+    <LinearLayout
+        android:id="@+id/cardEdad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_tarjeta"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="@id/cardPeso"
+        app:layout_constraintStart_toEndOf="@id/cardPeso"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/age"
+            android:textColor="@color/texto_secundario"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvEdad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:accessibilityLiveRegion="polite"
+            android:textColor="@android:color/white"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            tools:text="18" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnRestarEdad"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_circulo"
+                android:contentDescription="@string/cd_restar_edad"
+                android:src="@drawable/ic_remove"
+                app:tint="@android:color/white" />
+
+            <ImageButton
+                android:id="@+id/btnSumarEdad"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/bg_circulo"
+                android:contentDescription="@string/cd_sumar_edad"
+                android:src="@drawable/ic_add"
+                app:tint="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- boton calcular -->
+    <Button
+        android:id="@+id/btnCalcular"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:backgroundTint="@color/morado"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/calculate"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">BmiApp</string>
+    <string name="titulo">B &amp; O BMI CALCULATOR</string>
+    <string name="male">MALE</string>
+    <string name="female">FEMALE</string>
+    <string name="height">HEIGHT</string>
+    <string name="cm">cm</string>
+    <string name="weight">WEIGHT (Kg)</string>
+    <string name="age">AGE</string>
+    <string name="calculate">CALCULATE</string>
+    <string name="cd_restar_peso">Decrease weight</string>
+    <string name="cd_sumar_peso">Increase weight</string>
+    <string name="cd_restar_edad">Decrease age</string>
+    <string name="cd_sumar_edad">Increase age</string>
+    <string name="bmi_results">BMI Results</string>
+    <string name="your_results">Your Results</string>
+    <string name="recalculate">RE-CALCULATE</string>
+    <string name="cd_volver">Back</string>
+    <string name="underweight">UNDERWEIGHT</string>
+    <string name="normal">NORMAL</string>
+    <string name="overweight">OVERWEIGHT</string>
+    <string name="desc_underweight">You have a lower than normal body weight.</string>
+    <string name="desc_normal">You have a normal body weight. Good job!</string>
+    <string name="desc_overweight">You have a higher than normal body weight.</string>
+</resources>
